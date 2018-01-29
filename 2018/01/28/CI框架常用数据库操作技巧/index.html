@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="PHP,CI,MySQL," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="不爱编程的岩土狗不是好的地质人.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dorad&#39;s Blog">
-<meta property="og:url" content="https://dorad.cuger.cn/tags/SSR/index.html">
+<meta name="description" content="前言近期在CI框架下开发了多个项目(准确说是接盘哈哈)，在增改删查中也学习了不少的小技能~留下以后备查~ 数据库增改删查作为最基本的数据库操作，写起来代码冗余。等我琢磨一下看能不能封装一层 Model ，减去这些冗余的操作。 查询分页在对大量数据进行查询时，经常要用到分页查询操作。12345678910111213141516171819202122232425262728293031323334">
+<meta name="keywords" content="PHP,CI,MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CI框架常用数据库操作技巧">
+<meta property="og:url" content="https://dorad.cuger.cn/2018/01/28/CI框架常用数据库操作技巧/index.html">
 <meta property="og:site_name" content="Dorad&#39;s Blog">
-<meta property="og:description" content="不爱编程的岩土狗不是好的地质人.">
+<meta property="og:description" content="前言近期在CI框架下开发了多个项目(准确说是接盘哈哈)，在增改删查中也学习了不少的小技能~留下以后备查~ 数据库增改删查作为最基本的数据库操作，写起来代码冗余。等我琢磨一下看能不能封装一层 Model ，减去这些冗余的操作。 查询分页在对大量数据进行查询时，经常要用到分页查询操作。12345678910111213141516171819202122232425262728293031323334">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-29T06:22:50.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dorad&#39;s Blog">
-<meta name="twitter:description" content="不爱编程的岩土狗不是好的地质人.">
+<meta name="twitter:title" content="CI框架常用数据库操作技巧">
+<meta name="twitter:description" content="前言近期在CI框架下开发了多个项目(准确说是接盘哈哈)，在增改删查中也学习了不少的小技能~留下以后备查~ 数据库增改删查作为最基本的数据库操作，写起来代码冗余。等我琢磨一下看能不能封装一层 Model ，减去这些冗余的操作。 查询分页在对大量数据进行查询时，经常要用到分页查询操作。12345678910111213141516171819202122232425262728293031323334">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://dorad.cuger.cn/tags/SSR/"/>
+  <link rel="canonical" href="https://dorad.cuger.cn/2018/01/28/CI框架常用数据库操作技巧/"/>
 
 
 
 
 
-  <title>标签: SSR | Dorad's Blog</title>
+  <title>CI框架常用数据库操作技巧 | Dorad's Blog</title>
   
 
 
@@ -153,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -291,54 +293,236 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>SSR<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dorad.cuger.cn/2018/01/28/CI框架常用数据库操作技巧/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dorad">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/bd2d365de5ef1fc2fc30388d9d9c6b28?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dorad's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/01/28/SSR-CUGER-使用教程/" itemprop="url">
-              
-                <span itemprop="name">SSR_CUGER 使用教程</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">CI框架常用数据库操作技巧</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-28T13:45:25+08:00"
-              content="2018-01-28" >
-          01-28
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-28T19:34:26+08:00">
+                2018-01-28
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CI/" itemprop="url" rel="index">
+                    <span itemprop="name">CI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/28/CI框架常用数据库操作技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/28/CI框架常用数据库操作技巧/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/01/28/CI框架常用数据库操作技巧/" class="leancloud_visitors" data-flag-title="CI框架常用数据库操作技巧">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>近期在CI框架下开发了多个项目(准确说是接盘哈哈)，在增改删查中也学习了不少的小技能~<br>留下以后备查~</p>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p>增改删查作为最基本的数据库操作，写起来代码冗余。<br>等我琢磨一下看能不能封装一层 Model ，减去这些冗余的操作。</p>
+<h2 id="查询分页"><a href="#查询分页" class="headerlink" title="查询分页"></a>查询分页</h2><p>在对大量数据进行查询时，经常要用到分页查询操作。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span><span class="params">($param1 = null, $param2 = null, $param3 = null, $order_by = null, $direction = <span class="string">'DESC'</span>, $page_size = <span class="number">30</span>, $page_index = <span class="number">1</span>)</span></span>&#123;</span><br><span class="line">    <span class="comment">//表名</span></span><br><span class="line">    $table_name=<span class="string">'database_table_1'</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 筛选条件,可根据需求进行调整</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">if</span> ($param1) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;db-&gt;where(<span class="string">'param1'</span>, $param1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ($param2) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;db-&gt;where(<span class="string">'param2'</span>, $param2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ($param3) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;db-&gt;like(<span class="string">'param3'</span>, $param3);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//排序</span></span><br><span class="line">    <span class="keyword">if</span> ($order_by) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">$this</span>-&gt;db-&gt;field_exists($order_by,$table_name)) &#123;</span><br><span class="line">            <span class="comment">//字段不存在</span></span><br><span class="line">            <span class="keyword">$this</span>-&gt;msg = <span class="string">'该筛选字段不存在'</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;code = <span class="number">10022</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;db-&gt;order_by($order_by, $direction == <span class="keyword">null</span> ? <span class="string">'DESC'</span> : $direction);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//统计总条数</span></span><br><span class="line">    $result_nums = <span class="keyword">$this</span>-&gt;db-&gt;count_all_results($table_name,<span class="keyword">false</span>);</span><br><span class="line">    $page_size = intval($page_size);</span><br><span class="line">    <span class="comment">//分页</span></span><br><span class="line">    $page_index = intval($page_index);</span><br><span class="line">    $limit = <span class="number">0</span>;</span><br><span class="line">    $offset = <span class="number">30</span>;</span><br><span class="line">    <span class="keyword">if</span> ($page_index &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        $offset = ($page_index - <span class="number">1</span>) * $page_size;</span><br><span class="line">        $limit = $page_size;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;db-&gt;limit($limit, $offset);</span><br><span class="line">    $query = <span class="keyword">$this</span>-&gt;db-&gt;get();</span><br><span class="line">    $result = $query-&gt;result_array();</span><br><span class="line">    <span class="comment">//重组返回结果</span></span><br><span class="line">    $result_new = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">if</span> ($result) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;msg = <span class="string">'查到相关记录'</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;code = <span class="number">0</span>;</span><br><span class="line">        $result_new[<span class="string">'page_index'</span>] = $page_index;</span><br><span class="line">        $result_new[<span class="string">'page_size'</span>] = $page_size;</span><br><span class="line">        $result_new[<span class="string">'count'</span>] = $result_nums;</span><br><span class="line">        $result_new[<span class="string">'records'</span>] = $result;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;msg = <span class="string">'未查到相关记录！'</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;code = <span class="number">10023</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $result_new;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>只需要稍微修改 $table_name 以及相关参数，就能完成筛选、排序和分页等操作。</p>
+<h2 id="批量更新"><a href="#批量更新" class="headerlink" title="批量更新"></a>批量更新</h2><p>当有大部分数据需要进行同步时，考虑到效率问题以及相关的操作复杂度。<br>最初我用的自己构造的sql语句进行操作，但效率很低，而且很繁琐。<br>原sql语句：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> <span class="keyword">name</span>= <span class="keyword">CASE</span> mobile <span class="keyword">WHEN</span> <span class="string">'16688889999'</span> <span class="keyword">THEN</span> <span class="string">'小明'</span> <span class="keyword">WHEN</span> <span class="string">'19966665555'</span> <span class="keyword">THEN</span> <span class="string">'小红'</span>...END</span><br></pre></td></tr></table></figure></p>
+<p>但是效率低、构造困难。后发现 CI 自带批量更新。<a href="http://codeigniter.org.cn/user_guide/database/query_builder.html?highlight=update_batch#CI_DB_query_builder::update_batch" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//需求,已知 mobile，从其他接口查询到 name 和 department，需要同步到本地。</span></span><br><span class="line">$data=<span class="keyword">array</span>(</span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'name'</span>=<span class="string">'小明'</span>,</span><br><span class="line">    <span class="string">'mobile'</span>=<span class="string">'16688889999'</span>,</span><br><span class="line">    <span class="string">'department'</span>=&gt;<span class="string">'信息部'</span></span><br><span class="line">  ),</span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'name'</span>=<span class="string">'小红'</span>,</span><br><span class="line">    <span class="string">'mobile'</span>=<span class="string">'19966665555'</span>,</span><br><span class="line">    <span class="string">'department'</span>=&gt;<span class="string">'体育部'</span></span><br><span class="line">  ),</span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'name'</span>=<span class="string">'小张'</span>,</span><br><span class="line">    <span class="string">'mobile'</span>=<span class="string">'16536556986'</span>,</span><br><span class="line">    <span class="string">'department'</span>=&gt;<span class="string">'科技部'</span></span><br><span class="line">  )</span><br><span class="line">);</span><br><span class="line"><span class="comment">//以 mobile 为条件,当 mobile 与原表中的某行的 mobile 字段数值对应时，更新 name,department 字段。</span></span><br><span class="line">$re=<span class="keyword">$this</span>-&gt;db-&gt;update_batch(<span class="string">'database_table_1'</span>,$data,<span class="string">'mobile'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="分组统计"><a href="#分组统计" class="headerlink" title="分组统计"></a>分组统计</h2><p>当需要统计分析每小时/每天/每月/每年的记录时，时常会用到分组统计的功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/* 24h内，按小时统计 */</span><br><span class="line">$this-&gt;db-&gt;select(&apos;DATE_FORMAT(s.insert_datetime,\&apos;%Y-%m-%d\&apos;) as date,HOUR(s.insert_datetime) as hour,s.status,count(1) as total&apos;);</span><br><span class="line">$this-&gt;db-&gt;where(&apos;TIMESTAMPDIFF(HOUR,DATE_FORMAT(s.insert_datetime,\&apos;%Y-%m-%d %H:%m:%s\&apos;),CURTIME())&lt;=24&apos;);</span><br><span class="line">$this-&gt;db-&gt;group_by(&apos;s.status,DATE_FORMAT(s.insert_datetime,\&apos;%Y-%m-%d %H\&apos;)&apos;);</span><br><span class="line">$this-&gt;db-&gt;order_by(&apos;date&apos;,&apos;ASC&apos;);</span><br><span class="line">$result=$this-&gt;db-&gt;get()</span><br><span class="line">    -&gt;result_array();</span><br><span class="line">/*</span><br><span class="line"> * 结果后处理,显示 count 为0</span><br><span class="line"> */</span><br><span class="line">$datetime_now = new DateTime();</span><br><span class="line">$datetime_old = new DateTime();</span><br><span class="line">date_sub($datetime_old, date_interval_create_from_date_string(&quot;23 hours&quot;));</span><br><span class="line">for (; $datetime_old-&gt;getTimestamp() &lt;= $datetime_now-&gt;getTimestamp(); date_add($datetime_old, date_interval_create_from_date_string(&quot;1 hours&quot;))) &#123;</span><br><span class="line">    $status = array(&apos;发送成功&apos;, &apos;发送失败&apos;);</span><br><span class="line">    foreach ($status as $s) &#123;</span><br><span class="line">        # 筛选是否存在</span><br><span class="line">        $flag = 0;</span><br><span class="line">        if ($result) &#123;</span><br><span class="line">            foreach ($result as $key =&gt; $row) &#123;</span><br><span class="line">                if ($row[&apos;date&apos;] == $datetime_old-&gt;format(&apos;Y-m-d&apos;) AND $row[&apos;hour&apos;] == $datetime_old-&gt;format(&apos;H&apos;) AND $row[&apos;status&apos;] == $s) &#123;</span><br><span class="line">                    $flag = 1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //若不存在,则插入</span><br><span class="line">        if (!$flag) &#123;</span><br><span class="line">            array_push($result, array(</span><br><span class="line">                &apos;date&apos; =&gt; $datetime_old-&gt;format(&apos;Y-m-d&apos;),</span><br><span class="line">                &apos;hour&apos; =&gt; strval(intval($datetime_old-&gt;format(&apos;H&apos;))),</span><br><span class="line">                &apos;status&apos; =&gt; $s,</span><br><span class="line">                &apos;total&apos; =&gt; 0</span><br><span class="line">            ));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$result = arraySequence($result, &apos;date&apos;, &apos;SORT_ASC&apos;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>都是一些经常用到的东西，记录一下，以后备查~</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创,持续学习!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Dorad 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Dorad 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
+          
+            <a href="/tags/CI/" rel="tag"># CI</a>
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/28/SSR-CUGER-使用教程/" rel="next" title="SSR_CUGER 使用教程">
+                <i class="fa fa-chevron-left"></i> SSR_CUGER 使用教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -346,6 +530,21 @@
 
 
           
+  <div class="comments" id="comments">
+      
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <script>
+            new Valine({
+                av: AV,
+                app_id: '',
+                app_key: '',
+                el: '.comments'
+            });
+        </script>
+      
+  </div>
+
 
         </div>
         
@@ -366,8 +565,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -469,6 +677,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库"><span class="nav-number">2.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查询分页"><span class="nav-number">2.1.</span> <span class="nav-text">查询分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#批量更新"><span class="nav-number">2.2.</span> <span class="nav-text">批量更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组统计"><span class="nav-number">2.3.</span> <span class="nav-text">分组统计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -629,6 +853,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
