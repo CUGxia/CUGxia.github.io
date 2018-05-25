@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Redis学习记录]]></title>
+    <url>%2F2018%2F03%2F16%2FRedis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[Redis 学习记录​ 由于业务需要，最近需要学习 Redis，处理相关业务。以此文写下学习过程。 Key12345678910111213141516SET user_name 'Jack Smith' // 设置 user_name 的值为 Jack SmithDEL user_name // 删除 user_nameDUMP user_name // 序列化给定 user_name，返回序列化后的值(转为\xFFFF,16进制表示)EXISTS user_name // 检查 user_name 是否存在KEYS user_* // 获取所有以 user_ 开头的键名SELECT 1 // 选择1号数据库MOVE name 0 // name 键移到0数据库EXPIRE user_name 60 // 设置 user_name 在 60 秒后失效EXPIREAT user_name 1555555555005 // 设置过期时间戳PERSIST name // 移除过期时间TTL name // 返回 name 键的过期时间,以秒为单位PTTL name // 返回 name 健的过期时间，以毫秒为单位RANDOMKEY //从当前数据库随机返回一个 keyRENAME key_name new_name // 修改键字RENAMENX key_name new_name // 仅当 new_name 不存在时才重命名TYPE key_name // 返回该 key 的存储类型]]></content>
+      <categories>
+        <category>Code</category>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>学习记录</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Laravel 5.6 学习记录]]></title>
+    <url>%2F2018%2F03%2F05%2FLaravel%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[Laravel 5.6学习记录官方文档准备工作项目新建composer 方案创建名为 laravel.local 的项目，laravel 版本为 5.6.7。 1composer create-project laravel/laravel=5.6.7 laravel.local --prefer-dist laravel 方案本地先安装 Laravel 安装器 1composer global require "laravel/installer" 再转到想要安装的路径下，即可新建项目名称为 blog.local 的 Laravel 项目 1laravel new blog.local 修改环境文件(.env)1234DB_HOST=localhostDB_DATABASE=laravelDB_USERNAME=mysql_localDB_PASSWORD=mysql_local 安装 Laraver IDE 助手安装教程 本地快捷调试1php artisan serve 开启在 http://localhost:8000 的调试。 章节学习1. 配置相关维护模式当线上服务需要进入维护，可进入维护模式，所有请求将返回 503 状态码并抛出MaintenanceModeException 异常。 1php artisan down 同时可以设置维护提示消息，并加入 Retry-After HTTP头信息。 1php artisan down --message="Upgrading Database" --retry=60 重新上线。 1php artisan up 如需要修改 503 页面样式，可进入rescourse/views/errors/502.blade.php修改。 将 storage/app/public 链接到 public/sstorage1php artisan storage:link 线上部署线上部署教程 2. 视图]]></content>
+      <categories>
+        <category>Code</category>
+        <category>PHP</category>
+        <category>Laravel</category>
+      </categories>
+      <tags>
+        <tag>Laravel</tag>
+        <tag>学习记录</tag>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[文件名批量提取工具介绍及使用教程]]></title>
     <url>%2F2018%2F02%2F28%2F%E6%96%87%E4%BB%B6%E5%90%8D%E6%89%B9%E9%87%8F%E6%8F%90%E5%8F%96%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[前言之前在网络中心远教上班，经常会对下载的文件进行统计分析与核对，时常需要对文件名进行提取，原先用的都是bat批处理进行提取，后发现无法满足某些需求。故做此开发。 软件下载下载地址 软件UI 使用教程该软件简单易用，主要可选功能有: 导出模式：控制是否对子文件夹进行递归扫描并导出 导出类型：选择需要导出的文件类型(文件后缀判断，可多选) 导出格式：导出文件中是否带文件路径/后缀 后记该软件开发完成后我已经不在远教做助教了。所以也没有太用上，放在网络上给需要的朋友行个方便吧~]]></content>
