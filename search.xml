@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pymongo ????]]></title>
+    <url>%2F2018%2F06%2F21%2Fpymongo-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[pymongo ???????0x0 Question 1: ?????? id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) ??? array ?? mongodb ???? ObjectId ???? 12for row in array: del row['_id'] ??????!????????????? Solution?? python ??????????????????????????copy.deepcopy()????????????? 123456789101112131415161718...import copyarray=[ &#123; 'name':'??', 'age':10 &#125;, &#123; 'name':'??', 'age':16 &#125;]try: iArray=copy.deepcopy(array) db.collection.insert(iArray)except Exception as eBatchInsert: pass... ?????? array ????????? _id ???????????????]]></content>
+      <categories>
+        <category>Code</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>pymongo</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Redis学习记录]]></title>
     <url>%2F2018%2F03%2F16%2FRedis%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%2F</url>
     <content type="text"><![CDATA[Redis 学习记录​ 由于业务需要，最近需要学习 Redis，处理相关业务。以此文写下学习过程。 Key12345678910111213141516SET user_name 'Jack Smith' // 设置 user_name 的值为 Jack SmithDEL user_name // 删除 user_nameDUMP user_name // 序列化给定 user_name，返回序列化后的值(转为\xFFFF,16进制表示)EXISTS user_name // 检查 user_name 是否存在KEYS user_* // 获取所有以 user_ 开头的键名SELECT 1 // 选择1号数据库MOVE name 0 // name 键移到0数据库EXPIRE user_name 60 // 设置 user_name 在 60 秒后失效EXPIREAT user_name 1555555555005 // 设置过期时间戳PERSIST name // 移除过期时间TTL name // 返回 name 键的过期时间,以秒为单位PTTL name // 返回 name 健的过期时间，以毫秒为单位RANDOMKEY //从当前数据库随机返回一个 keyRENAME key_name new_name // 修改键字RENAMENX key_name new_name // 仅当 new_name 不存在时才重命名TYPE key_name // 返回该 key 的存储类型]]></content>
