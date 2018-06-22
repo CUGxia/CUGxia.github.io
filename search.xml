@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[pymongo ????]]></title>
+    <title><![CDATA[pymongo 使用记录]]></title>
     <url>%2F2018%2F06%2F21%2Fpymongo-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[pymongo ???????0x0 Question 1: ?????? id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) ??? array ?? mongodb ???? ObjectId ???? 12for row in array: del row['_id'] ??????!????????????? Solution?? python ??????????????????????????copy.deepcopy()????????????? 123456789101112131415161718...import copyarray=[ &#123; 'name':'??', 'age':10 &#125;, &#123; 'name':'??', 'age':16 &#125;]try: iArray=copy.deepcopy(array) db.collection.insert(iArray)except Exception as eBatchInsert: pass... ?????? array ????????? _id ???????????????]]></content>
+    <content type="text"><![CDATA[pymongo 使用过程中的坑0x0 Question 1: 插入自动生成 id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) 均会使 array 生成 mongodb 中的自增 ObjectId ，且使用 12for row in array: del row['_id'] 无法进行删除!造成后续更新过程中的困扰。 Solution由于 python 在传参过程中属于地址传递，所以会造成上述问题。可使用copy.deepcopy()生成副本后再进行插入操作。 12345678910111213141516171819...import copyarray=[ &#123; 'name':'张三', 'age':10 &#125;, &#123; 'name':'李四', 'age':16 &#125;]try: iArray=copy.deepcopy(array) db.collection.insert(iArray)except Exception as eBatchInsert: # 其它操作，如单条插入或者单条更新等 pass... 这样可以避免 array 中由于插入操作生成 _id 字段，导致后期更新等出现问题。]]></content>
       <categories>
         <category>Code</category>
         <category>Python</category>
@@ -36,9 +36,9 @@
         <category>Laravel</category>
       </categories>
       <tags>
+        <tag>PHP</tag>
         <tag>Laravel</tag>
         <tag>学习记录</tag>
-        <tag>PHP</tag>
       </tags>
   </entry>
   <entry>
