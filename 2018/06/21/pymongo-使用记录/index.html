@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="pymongo 使用过程中的坑0x0 Question 1: 插入自动生成 id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) 均会使 array 生成 mongodb 中的自增 ObjectId ，且使用 12for row in array:    del">
+<meta name="description" content="pymongo 使用过程中的坑0x0 Question 1: 插入自动生成 _id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) 均会使 array 生成 mongodb 中的自增 ObjectId ，且使用 12for row in array:    de">
 <meta name="keywords" content="pymongo,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pymongo 使用记录">
 <meta property="og:url" content="https://blog.cuger.cn/2018/06/21/pymongo-使用记录/index.html">
 <meta property="og:site_name" content="Dorad&#39;s Blog">
-<meta property="og:description" content="pymongo 使用过程中的坑0x0 Question 1: 插入自动生成 id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) 均会使 array 生成 mongodb 中的自增 ObjectId ，且使用 12for row in array:    del">
+<meta property="og:description" content="pymongo 使用过程中的坑0x0 Question 1: 插入自动生成 _id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) 均会使 array 生成 mongodb 中的自增 ObjectId ，且使用 12for row in array:    de">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-22T07:41:26.528Z">
+<meta property="og:updated_time" content="2018-06-22T07:47:33.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pymongo 使用记录">
-<meta name="twitter:description" content="pymongo 使用过程中的坑0x0 Question 1: 插入自动生成 id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) 均会使 array 生成 mongodb 中的自增 ObjectId ，且使用 12for row in array:    del">
+<meta name="twitter:description" content="pymongo 使用过程中的坑0x0 Question 1: 插入自动生成 _id123db.collection.insert(array)db.collection.insert_one(array)db.collection.insert_many(array) 均会使 array 生成 mongodb 中的自增 ObjectId ，且使用 12for row in array:    de">
 
 
 
@@ -433,8 +433,8 @@
       
 
       
-        <h1 id="pymongo-使用过程中的坑"><a href="#pymongo-使用过程中的坑" class="headerlink" title="pymongo 使用过程中的坑"></a>pymongo 使用过程中的坑</h1><h2 id="0x0-Question-1-插入自动生成-id"><a href="#0x0-Question-1-插入自动生成-id" class="headerlink" title="0x0 Question 1: 插入自动生成 id"></a>0x0 Question 1: 插入自动生成 id</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.insert(array)</span><br><span class="line">db.collection.insert_one(array)</span><br><span class="line">db.collection.insert_many(array)</span><br></pre></td></tr></table></figure>
-<p>均会使 array 生成 mongodb 中的自增 ObjectId ，且使用</p>
+        <h1 id="pymongo-使用过程中的坑"><a href="#pymongo-使用过程中的坑" class="headerlink" title="pymongo 使用过程中的坑"></a>pymongo 使用过程中的坑</h1><h2 id="0x0-Question-1-插入自动生成-id"><a href="#0x0-Question-1-插入自动生成-id" class="headerlink" title="0x0 Question 1: 插入自动生成 _id"></a>0x0 Question 1: 插入自动生成 _id</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.insert(array)</span><br><span class="line">db.collection.insert_one(array)</span><br><span class="line">db.collection.insert_many(array)</span><br></pre></td></tr></table></figure>
+<p>均会使 <code>array</code> 生成 <code>mongodb</code> 中的自增 <code>ObjectId</code> ，且使用</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> array:</span><br><span class="line">    <span class="keyword">del</span> row[<span class="string">'_id'</span>]</span><br></pre></td></tr></table></figure>
 <p>无法进行删除!造成后续更新过程中的困扰。</p>
 <h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>由于 python 在传参过程中属于地址传递，所以会造成上述问题。可使用<code>copy.deepcopy()</code>生成副本后再进行插入操作。</p>
@@ -694,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pymongo-使用过程中的坑"><span class="nav-number">1.</span> <span class="nav-text">pymongo 使用过程中的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x0-Question-1-插入自动生成-id"><span class="nav-number">1.1.</span> <span class="nav-text">0x0 Question 1: 插入自动生成 id</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.1.1.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pymongo-使用过程中的坑"><span class="nav-number">1.</span> <span class="nav-text">pymongo 使用过程中的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x0-Question-1-插入自动生成-id"><span class="nav-number">1.1.</span> <span class="nav-text">0x0 Question 1: 插入自动生成 _id</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.1.1.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
